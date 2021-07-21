@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -d /var/prtg/scriptsxml ]; then
+echo "script is present"
+else
+mkdir /var/prtg
+mkdir /var/prtg/scriptsxml
+cp /opt/etc/lte.sh /var/prtg/scriptsxml/lte.sh
+chmod 755 /var/prtg/scritsxml/lte.sh
+chmod +x /var/prtg/scriptsxml/lte.sh
+echo "script file placed"
+fi
