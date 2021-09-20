@@ -1,10 +1,10 @@
 #!/bin/sh
 
-CMD=`ndmq -p "show interface UsbQmi0" -x`
-RSRQ=`echo "$CMD" | grep -o -P '(?<=<rsrq>).*(?=<)'`
-RSRP=`echo "$CMD" | grep -o -P '(?<=<rsrp>).*(?=<)'`
-RSSI=`echo "$CMD" | grep -o -P '(?<=<rssi>).*(?=<)'`
-SINR=`echo "$CMD" | grep -o -P '(?<=<cinr>).*(?=<)'`
+CMD=`wget -qO - localhost:79/rci/show/interface/UsbQmi0; echo`
+RSRQ=`echo "$CMD" | grep -o -P '(?<=rsrq": ").*(?=")'`
+RSRP=`echo "$CMD" | grep -o -P '(?<=rsrp": ").*(?=")'`
+RSSI=`echo "$CMD" | grep -o -P '(?<=rssi": ").*(?=")'`
+SINR=`echo "$CMD" | grep -o -P '(?<=cinr": ").*(?=")'`
 
 echo "<prtg>
 <result>
