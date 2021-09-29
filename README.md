@@ -2,7 +2,7 @@
 a basic script to get lte signal levels with PRTG network moniror (custom ssh script sensor)
 
 Requirements:
-- Keenetic os v3.7.x (tested on beta 3.7b02, router is an old black Giga III).
+- Keenetic os v3.7.x (tested on beta 3.7 beta 2, router is an old black Giga III).
 - USB LTE modem in QMI mode, that reports its signal levels with a command "show interface UsbQmi0" in keenetic's CLI.
 - Entware installed and it's ssh accessible from your PRTG server/probe.
 - Make sure modem also reports its signal into entware with "ndmq -p "show interface UsbQmi0" -x"
